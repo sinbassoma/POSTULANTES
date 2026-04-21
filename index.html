@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLASH ELECTORAL 2026 - COMITE SST SINBA</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/400.css');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/700.css');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/900.css');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --purple-deep: #5B21B6;
+  --purple-main: #6B21A8;
+  --purple-light: #8B5CF6;
+  --purple-lighter: #A78BFA;
+  --purple-bg: #2D1066;
+  --purple-dark: #1A0A3E;
+  --purple-card: rgba(107, 33, 168, 0.15);
+  --accent-gold: #FFD700;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #1A0A3E;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* PARTICLES */
+.particles-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+}
+
+/* HERO */
+.hero-section {
+  background: linear-gradient(135deg, #1A0A3E 0%, #2D1066 30%, #5B21B6 70%, #1A0A3E 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-bg-anim {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(107, 33, 168, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
+  animation: heroPulse 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes heroPulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbFloat 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.1); }
+  66% { transform: translate(-20px, 15px) scale(0.9); }
+  100% { transform: translate(10px, -10px) scale(1.05); }
+}
+
+.hero-lines {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  animation: heroLineMove 4s linear infinite;
+}
+
+@keyframes heroLineMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.flag-peru {
+  width: 70px;
+  height: 48px;
+  display: inline-flex;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: flagWave 3s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.flag-red { background: #D91023; flex: 1; }
+.flag-white { background: #fff; flex: 1; display:flex; align-items:center; justify-content:center; }
+.flag-peru .coat-of-arms { width: 18px; height: 18px; background: linear-gradient(135deg, #D4AF37, #F5D060, #D4AF37); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; }
+
+.flash-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.flash-gold {
+  color: #FFD700;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3), 3px 3px 0 #b8860b;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.3), 3px 3px 0 #b8860b; }
+  100% { text-shadow: 0 0 50px rgba(255, 215, 0, 0.5), 3px 3px 0 #b8860b, 0 0 80px rgba(255,215,0,0.2); }
+}
+
+.flash-white {
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 3px 3px 0 rgba(0,0,0,0.5);
+}
+
+.flash-underline {
+  height: 5px;
+  background: linear-gradient(90deg, #8B5CF6, #FFD700, #8B5CF6);
+  border-radius: 3px;
+  margin-top: 8px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  animation: underlinePulse 2s ease-in-out infinite;
+}
+
+@keyframes underlinePulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); transform: scaleX(1); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); transform: scaleX(1.05); }
+}
+
+.election-year {
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+  animation: fadeInDown 1s ease 0.3s both;
+}
+
+.comite-header {
+  background: linear-gradient(135deg, #5B21B6, #7C3AED);
+  padding: 14px 28px;
+  border-radius: 16px;
+  display: inline-block;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(91, 33, 182, 0.5);
+  animation: fadeInUp 0.8s ease 0.6s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.comite-header::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.comite-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 2px;
+}
+
+.comite-title {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
+.section-arequipa {
+  background: linear-gradient(180deg, #1A0A3E 0%, #2D1066 50%, #1A0A3E 100%);
+  border-top: 3px solid #8B5CF6;
+  position: relative;
+  z-index: 1;
+}
+
+.section-lima {
+  background: linear-gradient(180deg, #1A0A3E 0%, #1e0845 50%, #1A0A3E 100%);
+  border-top: 3px solid #A78BFA;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header { margin-bottom: 32px; }
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 4px 40px rgba(139, 92, 246, 0.7); }
+}
+
+.badge-arequipa {
+  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}
+
+.badge-lima {
+  background: linear-gradient(135deg, #6B21A8, #8B5CF6);
+  box-shadow: 0 4px 20px rgba(107, 33, 168, 0.4);
+  animation-name: badgePulseLima;
+}
+
+@keyframes badgePulseLima {
+  0%, 100% { box-shadow: 0 4px 20px rgba(107, 33, 168, 0.4); }
+  50% { box-shadow: 0 4px 40px rgba(107, 33, 168, 0.7); }
+}
+
+/* CANDIDATE CARDS */
+.candidate-card {
+  background: rgba(107, 33, 168, 0.12);
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  animation: cardAppear 0.6s ease both;
+}
+
+.candidate-card:nth-child(1) { animation-delay: 0.1s; }
+.candidate-card:nth-child(2) { animation-delay: 0.2s; }
+.candidate-card:nth-child(3) { animation-delay: 0.3s; }
+.candidate-card:nth-child(4) { animation-delay: 0.4s; }
+.candidate-card:nth-child(5) { animation-delay: 0.5s; }
+.candidate-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardAppear {
+  from { opacity: 0; transform: translateY(40px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.candidate-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.candidate-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.candidate-card.selected {
+  border-color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.15), 0 12px 48px rgba(0,0,0,0.4);
+}
+
+.candidate-card.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #FFD700, #F5D060);
+  color: #1A0A3E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+  z-index: 10;
+  animation: popIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(255,215,0,0.4);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0) rotate(-180deg); }
+  60% { transform: scale(1.3) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.candidate-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.candidate-card:hover .candidate-img { transform: scale(1.05); }
+
+.candidate-info { padding: 12px 10px; text-align: center; }
+
+.candidate-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.number-purple {
+  background: linear-gradient(135deg, #6B21A8, #8B5CF6);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.4);
+}
+
+.candidate-name {
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.candidate-area {
+  font-size: 0.62rem;
+  color: #A78BFA;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.candidate-role {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.candidate-dni {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.25);
+  font-family: monospace;
+}
+
+/* COUNTER */
+.counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-top: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s;
+}
+
+.counter-badge.complete {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.counter-num {
+  font-weight: 900;
+  color: #FFD700;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+/* SUBMIT */
+.submit-area {
+  background: linear-gradient(180deg, #1A0A3E 0%, #111 100%);
+  padding: 48px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #6B21A8, #8B5CF6);
+  color: #fff;
+  border: none;
+  padding: 18px 64px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(107, 33, 168, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 48px rgba(107, 33, 168, 0.6);
+}
+
+.btn-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.btn-submit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-submit:hover::before { left: 100%; }
+
+/* HOSTIGAMIENTO */
+.section-hostigamiento {
+  background: linear-gradient(180deg, #1A0A3E 0%, #2D1066 30%, #3B1A7A 70%, #1A0A3E 100%);
+  border-top: 3px solid #A78BFA;
+  position: relative;
+  z-index: 1;
+}
+
+.hostig-header-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+  animation: iconBounce 3s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.hostig-info-card {
+  background: rgba(107, 33, 168, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardAppear 0.6s ease both;
+}
+
+.hostig-info-card:nth-child(1) { animation-delay: 0.1s; }
+.hostig-info-card:nth-child(2) { animation-delay: 0.2s; }
+.hostig-info-card:nth-child(3) { animation-delay: 0.3s; }
+.hostig-info-card:nth-child(4) { animation-delay: 0.4s; }
+.hostig-info-card:nth-child(5) { animation-delay: 0.5s; }
+.hostig-info-card:nth-child(6) { animation-delay: 0.6s; }
+
+.hostig-info-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(139, 92, 246, 0.1);
+  background: rgba(107, 33, 168, 0.2);
+}
+
+.hostig-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+.hostig-card-title { font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: #A78BFA; }
+.hostig-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+.hostig-protocol-list { list-style: none; padding: 0; }
+.hostig-protocol-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.hostig-protocol-list li:last-child { border-bottom: none; }
+.hostig-protocol-list li::before { content: '▶'; color: #A78BFA; font-size: 0.7rem; margin-top: 4px; flex-shrink: 0; }
+
+.hostig-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hostig-stat {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.hostig-stat:hover { transform: scale(1.05); background: rgba(139, 92, 246, 0.2); }
+.hostig-stat-number { font-size: 1.8rem; font-weight: 900; color: #A78BFA; display: block; }
+.hostig-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+.hostig-quote {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+  border-left: 4px solid #A78BFA;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-top: 32px;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.hostig-quote-author {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-weight: 700;
+  color: #A78BFA;
+  font-size: 0.85rem;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  padding: 20px;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal-box {
+  background: linear-gradient(135deg, #2D1066, #1A0A3E);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  transform: scale(0.8) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-box { transform: scale(1) translateY(0); }
+
+.modal-check {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #FFD700, #F5D060);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+  animation: checkBounce 0.6s ease;
+}
+
+@keyframes checkBounce {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.modal-title { font-size: 1.5rem; font-weight: 900; margin-bottom: 16px; }
+
+.modal-summary {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  gap: 12px;
+}
+
+.summary-item:last-child { border-bottom: none; }
+.summary-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
+.summary-value { font-weight: 700; color: #FFD700; text-align: right; }
+
+.btn-confirm {
+  background: linear-gradient(135deg, #FFD700, #F5D060);
+  color: #1A0A3E;
+  border: none;
+  padding: 14px 48px;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-confirm:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3); }
+
+.btn-cancel {
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 48px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 12px;
+}
+
+.btn-cancel:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+
+/* RESULTS */
+.results-section {
+  display: none;
+  background: linear-gradient(180deg, #1A0A3E, #2D1066);
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.results-section.active { display: block; animation: fadeUp 0.8s ease; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-bar-container { margin-bottom: 14px; }
+
+.result-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  gap: 8px;
+}
+
+.result-bar-track {
+  height: 36px;
+  background: rgba(139, 92, 246, 0.15);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.result-bar-fill {
+  height: 100%;
+  border-radius: 18px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: barShimmer 2s ease-in-out infinite;
+}
+
+@keyframes barShimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.fill-purple { background: linear-gradient(90deg, #6B21A8, #A78BFA); }
+.fill-gold { background: linear-gradient(90deg, #B8860B, #FFD700); }
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: #FFD700;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255,215,0,0); }
+}
+
+.error-shake { animation: shake 0.5s ease; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #6B21A8;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 2000;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(107, 33, 168, 0.4);
+  max-width: 90vw;
+  text-align: center;
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast-success { background: linear-gradient(135deg, #059669, #10b981); }
+
+.footer {
+  background: linear-gradient(180deg, #1A0A3E, #0D0520);
+  padding: 32px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(139, 92, 246, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.footer p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+.accordion-item {
+  background: rgba(107, 33, 168, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.accordion-item:hover { border-color: rgba(139, 92, 246, 0.4); }
+
+.accordion-header {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.accordion-header:hover { color: #A78BFA; }
+.accordion-arrow { transition: transform 0.3s; font-size: 0.8rem; }
+.accordion-item.open .accordion-arrow { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.accordion-item.open .accordion-content { max-height: 500px; }
+.accordion-body { padding: 0 20px 16px; font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+.progress-steps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s;
+}
+
+.progress-step.done { background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10b981; }
+.progress-step.active { background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); color: #FFD700; }
+.step-icon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; background: rgba(255,255,255,0.1); }
+.progress-step.done .step-icon { background: #10b981; color: #fff; }
+.progress-step.active .step-icon { background: #FFD700; color: #000; }
+
+.confetti-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 3000;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 10, 62, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.sticky-nav-btn {
+  padding: 7px 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-weight: 700;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.sticky-nav-btn:hover { background: rgba(139, 92, 246, 0.1); color: #fff; border-color: rgba(139, 92, 246, 0.4); }
+.sticky-nav-btn.active { background: linear-gradient(135deg, #6B21A8, #8B5CF6); border-color: transparent; color: #fff; }
+
+@media (max-width: 768px) {
+  .hero-section { min-height: 300px; }
+  .flash-title { letter-spacing: -1px; }
+  .comite-header { padding: 10px 20px; }
+  .candidate-card { border-radius: 12px; }
+  .candidate-info { padding: 10px 8px; }
+  .candidate-name { font-size: 0.8rem; }
+  .btn-submit { padding: 16px 40px; font-size: 1rem; letter-spacing: 2px; }
+  .modal-box { padding: 24px 20px; }
+  .hostig-info-card { padding: 18px; }
+  .hostig-stats { grid-template-columns: repeat(2, 1fr); }
+  .hostig-quote { padding: 16px 18px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-section { min-height: 260px; }
+  .flag-peru { width: 50px; height: 36px; }
+  .election-year { letter-spacing: 2px; }
+  .flash-underline { width: 180px !important; }
+  .candidate-grid { gap: 6px !important; }
+  .candidate-img { aspect-ratio: 3/4.2; }
+  .candidate-number { width: 30px; height: 30px; font-size: 12px; margin-bottom: 6px; }
+  .location-badge { padding: 6px 14px; font-size: 0.75rem; }
+  .btn-submit { padding: 14px 32px; font-size: 0.9rem; }
+  .hostig-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .hostig-stat { padding: 12px 8px; }
+  .hostig-stat-number { font-size: 1.4rem; }
+  .candidate-role, .candidate-dni { font-size: 0.55rem; }
+}
+
+@media (max-width: 360px) {
+  .candidate-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
+  .hostig-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="particles-container" id="particles"></div>
+
+<nav class="sticky-nav" id="stickyNav">
+  <button class="sticky-nav-btn active" onclick="scrollToSection('hero')">🏠 Inicio</button>
+  <button class="sticky-nav-btn" onclick="scrollToSection('section-arequipa')">📍 Arequipa</button>
+  <button class="sticky-nav-btn" onclick="scrollToSection('section-lima')">📍 Lima</button>
+  <button class="sticky-nav-btn" onclick="scrollToSection('section-hostigamiento')">🛡️ Hostigamiento</button>
+  <button class="sticky-nav-btn" onclick="scrollToSection('submit-area')">🗳️ Votar</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section" id="hero">
+  <div class="hero-bg-anim"></div>
+  <div class="hero-glow-orb" style="width:300px;height:300px;background:rgba(107,33,168,0.12);top:-50px;left:-50px;"></div>
+  <div class="hero-glow-orb" style="width:250px;height:250px;background:rgba(139,92,246,0.1);bottom:-50px;right:-50px;animation-delay:-4s;"></div>
+  <div class="hero-lines">
+    <div class="hero-line" style="top:15%;width:200px;animation-delay:0s;"></div>
+    <div class="hero-line" style="top:35%;width:300px;animation-delay:1s;"></div>
+    <div class="hero-line" style="top:55%;width:150px;animation-delay:0.5s;"></div>
+    <div class="hero-line" style="top:75%;width:250px;animation-delay:1.5s;"></div>
+    <div class="hero-line" style="top:90%;width:180px;animation-delay:2s;"></div>
+  </div>
+  <div class="text-center px-4 relative z-10" style="width:100%;">
+    <div class="flex items-center justify-center mb-4" style="animation: fadeInDown 0.8s ease 0.2s both;">
+      <div class="flag-peru">
+        <div class="flag-red"></div>
+        <div class="flag-white"><div class="coat-of-arms">🏛</div></div>
+        <div class="flag-red"></div>
+      </div>
+    </div>
+    <p class="election-year">Elecciones Generales 2026</p>
+    <div class="flex items-center justify-center flex-wrap gap-2" style="animation: fadeInUp 0.8s ease 0.4s both;">
+      <h1 class="flash-title flash-gold">Sinba</h1>
+      <h1 class="flash-title flash-white">ELECTORAL</h1>
+    </div>
+    <div class="flex justify-center"><div class="flash-underline" style="width:280px;"></div></div>
+    <div class="mt-8">
+      <div class="comite-header">
+        <p class="comite-label">Comité de Seguridad y Salud en el Trabajo</p>
+        <p class="comite-title">SST · SINBA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREQUIPA -->
+<section class="section-arequipa py-10 sm:py-12 px-4" id="section-arequipa">
+  <div class="max-w-6xl mx-auto">
+    <div class="section-header text-center">
+      <div class="progress-steps">
+        <div class="progress-step active" id="step1"><span class="step-icon">1</span> Arequipa</div>
+        <div class="progress-step" id="step2"><span class="step-icon">2</span> Lima</div>
+        <div class="progress-step" id="step3"><span class="step-icon">3</span> Hostigamiento</div>
+        <div class="progress-step" id="step4"><span class="step-icon">4</span> Votar</div>
+      </div>
+      <div class="location-badge badge-arequipa mb-4">
+        <span class="pulse-dot"></span>📍 AREQUIPA
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black mb-2">Supervisor de Seguridad</h2>
+      <p class="text-base sm:text-lg text-gray-400">Seleccione <span class="text-yellow-400 font-bold">1 candidato</span> entre 3 postulantes</p>
+    </div>
+    
+    <div class="candidate-grid grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto" id="grid-arequipa">
+      <div class="candidate-card" data-group="arequipa" data-id="A1" onclick="selectCandidate(this, 'arequipa')">
+        <img class="candidate-img" src="Ale.png" alt="Candidata 1">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">1</div>
+          <p class="candidate-name">Palma López Karol Alejandra</p>
+          <p class="candidate-role">Candidata Nº 1</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Coordinadora Arequipa</p>
+          <p class="candidate-dni">DNI: </p>
+        </div>
+      </div>
+      <div class="candidate-card" data-group="arequipa" data-id="A2" onclick="selectCandidate(this, 'arequipa')">
+        <img class="candidate-img" src="Sharon.jpeg" alt="Candidata 2">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">2</div>
+          <p class="candidate-name">Nuñez Alarcón Sharon Katherine</p>
+          <p class="candidate-role">Candidata Nº 2</p>
+          <p class="candidate-area">🏢 Experiencia Arequipa</p>
+          <p class="candidate-role">Guardiana Experiencia Arequipa</p>
+          <p class="candidate-dni">DNI: </p>
+        </div>
+      </div>
+      <div class="candidate-card" data-group="arequipa" data-id="A3" onclick="selectCandidate(this, 'arequipa')">
+        <img class="candidate-img" src="Werner.png" alt="Candidato 3">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">3</div>
+          <p class="candidate-name">Tuny Zuñiga Werner Brihan</p>
+          <p class="candidate-role">Candidato Nº 3</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Supervisor Arequipa/p>
+          <p class="candidate-dni">DNI: </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      <div class="counter-badge" id="counter-badge-arequipa">
+        <span>Seleccionados:</span>
+        <span class="counter-num" id="counter-arequipa">0</span>
+        <span>/ 1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIMA -->
+<section class="section-lima py-10 sm:py-12 px-4" id="section-lima"> 
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="section-header text-center">
+      <div class="location-badge badge-lima mb-4">
+        <span class="pulse-dot"></span>📍 LIMA
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-black mb-2">
+        Miembros del Comité
+      </h2>
+
+      <p class="text-base sm:text-lg text-gray-400">
+        Seleccione <span class="text-yellow-400 font-bold">2 candidatos</span> entre 5 postulantes
+      </p>
+    </div>
+    
+    <div class="candidate-grid grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto" id="grid-lima">
+      
+      <!-- Candidato 1 -->
+      <div class="candidate-card" data-group="lima" data-id="L1" onclick="selectCandidate(this, 'lima')">
+        <img class="candidate-img" src="flavia.png" alt="Foto de Flavia Espinoza">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">1</div>
+          <p class="candidate-name">Flavia Espinoza La Rosa</p>
+          <p class="candidate-area">🎭 Experiencias</p>
+          <p class="candidate-role">Guardiana de Experiencias</p>
+          <p class="candidate-dni">DNI: 71897023</p>
+        </div>
+      </div>
+
+      <!-- Candidato 2 -->
+      <div class="candidate-card" data-group="lima" data-id="L2" onclick="selectCandidate(this, 'lima')">
+        <img class="candidate-img" src="abraham.png" alt="Foto de Abraham Zegarra">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">2</div>
+          <p class="candidate-name">Abraham Zegarra Osgatil</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Colaborador CIRC</p>
+          <p class="candidate-dni">DNI: 75253000</p>
+        </div>
+      </div>
+
+      <!-- Candidato 3 -->
+      <div class="candidate-card" data-group="lima" data-id="L3" onclick="selectCandidate(this, 'lima')">
+        <img class="candidate-img" src="erick.png" alt="Foto de Erick Cacha">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">3</div>
+          <p class="candidate-name">Erick Cacha Mejía</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Colaborador CIRC</p>
+          <p class="candidate-dni">DNI: 73717623</p>
+        </div>
+      </div>
+
+      <!-- Candidato 4 -->
+      <div class="candidate-card" data-group="lima" data-id="L4" onclick="selectCandidate(this, 'lima')">
+        <img class="candidate-img" src="edu.png" alt="Foto de Eduardo Sánchez">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">4</div>
+          <p class="candidate-name">Eduardo Sánchez Cotrina</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Coordinador Técnico</p>
+          <p class="candidate-dni">DNI: 73999944</p>
+        </div>
+      </div>
+
+      <!-- Candidato 5 -->
+      <div class="candidate-card" data-group="lima" data-id="L5" onclick="selectCandidate(this, 'lima')">
+        <img class="candidate-img" src="Milu.png" alt="Foto de Miluska Palma">
+        <div class="candidate-info">
+          <div class="candidate-number number-purple">5</div>
+          <p class="candidate-name">Miluska Palma Villanueva</p>
+          <p class="candidate-area">🏢 Operaciones</p>
+          <p class="candidate-role">Colaboradora</p>
+          <p class="candidate-dni">DNI: ********</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contador -->
+    <div class="text-center mt-6">
+      <div class="counter-badge" id="counter-badge-lima">
+        <span>Seleccionados:</span>
+        <span class="counter-num" id="counter-lima">0</span>
+        <span>/ 2</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOSTIGAMIENTO -->
+<section class="section-hostigamiento py-10 sm:py-12 px-4" id="section-hostigamiento">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- HEADER (igual estilo Lima) -->
+    <div class="section-header text-center">
+      
+      <div class="location-badge badge-hostigamiento mb-4">
+        <span class="pulse-dot"></span>📍 TODO SINBA
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-black mb-2">
+        Comité de Hostigamiento
+      </h2>
+
+      <p class="text-base sm:text-lg text-gray-400">
+        Seleccione <span class="text-yellow-400 font-bold">2 candidatos</span> entre 5 postulantes
+      </p>
+
+    </div>
+
+    <!-- GRID (igual que Lima) -->
+    <div class="candidate-grid grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto" id="grid-hostigamiento">
+
+      <!-- Candidato 1 -->
+      <div class="candidate-card" data-group="hostigamiento" data-id="H1" onclick="selectCandidate(this, 'hostigamiento')">
+        <img class="candidate-img" src="flavia.png" alt="Foto de Flavia Espinoza">
+        <div class="candidate-info">
+          <div class="candidate-number number-red">1</div>
+          <p class="candidate-name">Flavia Espinoza La Rosa</p>
+          <p class="candidate-area">🏢 Comercial</p>
+          <p class="candidate-role">Guardiana de Experiencia ESB</p>
+          <p class="candidate-dni">DNI: 71897023</p>
+        </div>
+      </div>
+
+      <!-- Candidato 2 -->
+      <div class="candidate-card" data-group="hostigamiento" data-id="H2" onclick="selectCandidate(this, 'hostigamiento')">
+        <img class="candidate-img" src="rena.png" alt="Foto de Cristhian Velarde">
+        <div class="candidate-info">
+          <div class="candidate-number number-red">2</div>
+          <p class="candidate-name">Cristhian Renato Velarde Zimic</p>
+          <p class="candidate-area">🏢 Comercial</p>
+          <p class="candidate-role">Líder de Comunicación</p>
+          <p class="candidate-dni">DNI: 72860115</p>
+        </div>
+      </div>
+
+      <!-- Candidato 3 -->
+      <div class="candidate-card" data-group="hostigamiento" data-id="H3" onclick="selectCandidate(this, 'hostigamiento')">
+        <img class="candidate-img" src="angel.png" alt="Foto de Ángel Cortez">
+        <div class="candidate-info">
+          <div class="candidate-number number-red">3</div>
+          <p class="candidate-name">Ángel Gabriel Cortez Bullón</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Líder de Innovación e Implementación</p>
+          <p class="candidate-dni">DNI: 71229838</p>
+        </div>
+      </div>
+
+      <!-- Candidato 4 -->
+      <div class="candidate-card" data-group="hostigamiento" data-id="H4" onclick="selectCandidate(this, 'hostigamiento')">
+        <img class="candidate-img" src="edu.png" alt="Foto de Eduardo Sánchez">
+        <div class="candidate-info">
+          <div class="candidate-number number-red">4</div>
+          <p class="candidate-name">Eduardo Yampier Sánchez Cotrina</p>
+          <p class="candidate-area">🏢 Innovación y Operaciones</p>
+          <p class="candidate-role">Coordinador Técnico</p>
+          <p class="candidate-dni">DNI: 73999944</p>
+        </div>
+      </div>
+
+      <!-- Candidato 5 -->
+      <div class="candidate-card" data-group="hostigamiento" data-id="H5" onclick="selectCandidate(this, 'hostigamiento')">
+        <img class="candidate-img" src="vale.png" alt="Foto de Valeria Vega">
+        <div class="candidate-info">
+          <div class="candidate-number number-red">5</div>
+          <p class="candidate-name">Valeria Abril Vega Sovero</p>
+          <p class="candidate-area">🏢 Comercial</p>
+          <p class="candidate-role">Líder de Experiencia</p>
+          <p class="candidate-dni">DNI: 72758615</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTADOR (consistente) -->
+    <div class="text-center mt-6">
+      <div class="counter-badge" id="counter-badge-hostigamiento">
+        <span>Seleccionados:</span>
+        <span class="counter-num" id="counter-hostigamiento">0</span>
+        <span>/ 1</span>
+      </div>
+    </div>
+
+    <!-- MENSAJE (mejor UX) -->
+    <div class="hostig-quote max-w-3xl mx-auto mt-6 text-center text-sm sm:text-base text-gray-400">
+      “Un entorno libre de hostigamiento no es opcional: es la base de un equipo sano y seguro.”
+      <span class="block mt-2 text-xs text-gray-500">— Política SST, SINBA 2026</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUBMIT -->
+<section class="submit-area" id="submit-area">
+  <div class="mb-6 animate-on-scroll">
+    <h2 class="text-xl sm:text-2xl font-black mb-2">🗳️ Emita su Voto</h2>
+    <p class="text-gray-400 text-sm">Revise su selección y confirme su voto</p>
+  </div>
+  <button class="btn-submit" onclick="openConfirmModal()">
+    🗳️ Emitir Voto
+  </button>
+</section>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal-box">
+    <div class="modal-check">🗳️</div>
+    <h3 class="modal-title">¿Confirmar su voto?</h3>
+    <p class="text-gray-400 mb-6 text-sm">Revise su selección antes de confirmar</p>
+    <div class="modal-summary" id="modalSummary"></div>
+    <button class="btn-confirm" onclick="confirmVote()">✅ Confirmar Voto</button>
+    <br>
+    <button class="btn-cancel" onclick="closeConfirmModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<section class="results-section" id="resultsSection">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="text-5xl sm:text-6xl mb-4" style="animation: popIn 0.6s ease;">🎉</div>
+    <h2 class="text-2xl sm:text-3xl font-black mb-2">¡Voto Registrado!</h2>
+    <p class="text-gray-400 mb-8">Resultados de la elección COMITE SST SINBA 2026- 2028</p>
+    
+    <div class="mb-10">
+      <h3 class="text-lg sm:text-xl font-bold mb-4" style="color: #A78BFA;">📍 AREQUIPA — Supervisor de Seguridad</h3>
+      <div id="results-arequipa"></div>
+    </div>
+
+    <div class="mb-10">
+      <h3 class="text-lg sm:text-xl font-bold mb-4" style="color: #8B5CF6;">📍 LIMA — Miembros del Comité SST</h3>
+      <div id="results-lima"></div>
+    </div>
+     <div class="mb-10">
+      <h3 class="text-lg sm:text-xl font-bold mb-4" style="color: #8B5CF6;">📍 Sinba — Miembros del Comité Hostigamiento</h3>
+      <div id="results-lima"></div>
+    </div>
+
+    <button class="btn-submit mt-4" onclick="resetVote()" style="font-size:0.9rem;padding:14px 40px;">
+      🔄 Nueva Votación
+    </button>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 SINBA — Comité de Seguridad y Salud en el Trabajo (SST)</p>
+  <p class="mt-2 text-xs" style="color: rgba(255,255,255,0.2);">FLASH ELECTORAL 2026 · Todos los derechos reservados</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="confetti-container" id="confettiContainer"></div>
+
+<script>
+const selections = { arequipa: [], lima: [] };
+const maxSelect = { arequipa: 1, lima: 2 };
+
+const candidates = {
+  arequipa: {
+    'A1': { name: 'Alejandra Palma', votes: 0 },
+    'A2': { name: 'Sharon Nuñez', votes: 0 },
+    'A3': { name: 'Werner Tuny', votes: 0 }
+  },
+  lima: {
+    'L1': { name: 'Flavia Espinoza La Rosa', votes: 0 },
+    'L2': { name: 'Abraham Zegarra Osgatil', votes: 0 },
+    'L3': { name: 'Erick Cacha Mejía', votes: 0 },
+    'L4': { name: 'Eduardo Sánchez Cotrina', votes: 0 },
+    'L5': { name: 'Miluska Palma Villanueva', votes: 0 },
+    'L6': { name: 'Miguel Paredes', votes: 0 }
+  }
+};
+
+// PARTICLES
+function createParticles() {
+  const container = document.getElementById('particles');
+  const colors = ['#6B21A8', '#8B5CF6', '#FFD700', '#A78BFA', '#7C3AED'];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 2;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+    p.style.animationDelay = (Math.random() * 15) + 's';
+    container.appendChild(p);
+  }
+}
+createParticles();
+
+// SCROLL ANIMATIONS
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+}
+initScrollAnimations();
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', () => {
+  const sections = ['hero', 'section-arequipa', 'section-lima', 'section-hostigamiento', 'submit-area'];
+  const navBtns = document.querySelectorAll('.sticky-nav-btn');
+  let current = 0;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 150) current = i;
+  });
+  navBtns.forEach((btn, i) => btn.classList.toggle('active', i === current));
+});
+
+// SELECTION
+function selectCandidate(card, group) {
+  const id = card.dataset.id;
+  if (card.classList.contains('selected')) {
+    card.classList.remove('selected');
+    selections[group] = selections[group].filter(x => x !== id);
+  } else {
+    if (selections[group].length >= maxSelect[group]) {
+      showToast(`Solo puede seleccionar ${maxSelect[group]} candidato(s) en ${group.toUpperCase()}`, false);
+      const grid = document.getElementById('grid-' + group);
+      grid.classList.add('error-shake');
+      setTimeout(() => grid.classList.remove('error-shake'), 500);
+      return;
+    }
+    card.classList.add('selected');
+    selections[group].push(id);
+  }
+  updateCounter(group);
+  updateProgressSteps();
+}
+
+function updateCounter(group) {
+  const counter = document.getElementById('counter-' + group);
+  const badge = document.getElementById('counter-badge-' + group);
+  counter.textContent = selections[group].length;
+  if (selections[group].length === maxSelect[group]) {
+    counter.style.color = '#10b981';
+    badge.classList.add('complete');
+  } else {
+    counter.style.color = '#FFD700';
+    badge.classList.remove('complete');
+  }
+}
+
+function updateProgressSteps() {
+  const s1 = document.getElementById('step1'), s2 = document.getElementById('step2'), s3 = document.getElementById('step3'), s4 = document.getElementById('step4');
+  if (selections.arequipa.length === maxSelect.arequipa) { s1.classList.add('done'); s1.classList.remove('active'); s2.classList.add('active'); }
+  if (selections.lima.length === maxSelect.lima) { s2.classList.add('done'); s2.classList.remove('active'); s3.classList.add('active'); }
+  if (selections.arequipa.length === maxSelect.arequipa && selections.lima.length === maxSelect.lima) { s4.classList.add('active'); }
+}
+
+function getSelectedNames(group) {
+  return selections[group].map(id => candidates[group][id].name);
+}
+
+// ACCORDION
+function toggleAccordion(item) {
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// STATS ANIMATION
+function animateStats() {
+  document.querySelectorAll('.hostig-stat-number[data-target]').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { animateStats(); statsObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.hostig-stats').forEach(el => statsObserver.observe(el));
+
+// CONFETTI
+function launchConfetti() {
+  const container = document.getElementById('confettiContainer');
+  container.innerHTML = '';
+  const colors = ['#FFD700', '#6B21A8', '#8B5CF6', '#A78BFA', '#7C3AED', '#FFD700', '#fff'];
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    const size = Math.random() * 10 + 5;
+    piece.style.width = size + 'px';
+    piece.style.height = size + 'px';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    piece.style.animationDelay = (Math.random() * 1) + 's';
+    container.appendChild(piece);
+  }
+  setTimeout(() => container.innerHTML = '', 5000);
+}
+
+// MODAL
+function openConfirmModal() {
+  if (selections.arequipa.length < 1) {
+    showToast('Seleccione 1 candidato en AREQUIPA', false);
+    document.getElementById('section-arequipa').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  if (selections.lima.length < 2) {
+    showToast('Seleccione 2 candidatos en LIMA', false);
+    document.getElementById('section-lima').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  const summary = document.getElementById('modalSummary');
+  summary.innerHTML = `
+    <div class="summary-item">
+      <span class="summary-label">📍 Arequipa (Supervisor)</span>
+      <span class="summary-value">${getSelectedNames('arequipa').join(', ')}</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">📍 Lima (2 Miembros)</span>
+      <span class="summary-value">${getSelectedNames('lima').join(', ')}</span>
+    </div>
+  `;
+  document.getElementById('confirmModal').classList.add('active');
+}
+
+function closeConfirmModal() {
+  document.getElementById('confirmModal').classList.remove('active');
+}
+
+function confirmVote() {
+  const arequipaVotes = {}, limaVotes = {};
+  Object.keys(candidates.arequipa).forEach(key => { arequipaVotes[key] = Math.floor(Math.random() * 80) + 10; });
+  selections.arequipa.forEach(id => arequipaVotes[id] += 50);
+  Object.keys(candidates.lima).forEach(key => { limaVotes[key] = Math.floor(Math.random() * 60) + 10; });
+  selections.lima.forEach(id => limaVotes[id] += 50);
+
+  renderResults('arequipa', arequipaVotes);
+  renderResults('lima', limaVotes);
+  closeConfirmModal();
+  document.getElementById('resultsSection').classList.add('active');
+  setTimeout(() => document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' }), 100);
+  showToast('¡Su voto ha sido registrado exitosamente!', true);
+  launchConfetti();
+}
+
+function renderResults(group, votes) {
+  const container = document.getElementById('results-' + group);
+  const total = Object.values(votes).reduce((a, b) => a + b, 0);
+  const sorted = Object.entries(votes).sort((a, b) => b[1] - a[1]);
+  const maxVote = sorted[0][1];
+
+  container.innerHTML = sorted.map(([id, voteCount]) => {
+    const pct = ((voteCount / total) * 100).toFixed(1);
+    const barWidth = ((voteCount / maxVote) * 100).toFixed(1);
+    const isWinner = voteCount === maxVote;
+    const fillClass = isWinner ? 'fill-gold' : 'fill-purple';
+    const name = candidates[group][id].name;
+    return `
+      <div class="result-bar-container">
+        <div class="result-bar-label">
+          <span>${isWinner ? '🏆 ' : ''}${name}</span>
+          <span class="text-yellow-400 font-bold">${pct}%</span>
+        </div>
+        <div class="result-bar-track">
+          <div class="result-bar-fill ${fillClass}" style="width: 0%;" data-width="${barWidth}%"></div>
+        </div>
+      </div>`;
+  }).join('');
+
+  setTimeout(() => {
+    container.querySelectorAll('.result-bar-fill').forEach(bar => { bar.style.width = bar.dataset.width; });
+  }, 300);
+}
+
+function resetVote() {
+  selections.arequipa = [];
+  selections.lima = [];
+  document.querySelectorAll('.candidate-card').forEach(c => c.classList.remove('selected'));
+  updateCounter('arequipa');
+  updateCounter('lima');
+  ['step1','step2','step3','step4'].forEach(id => { document.getElementById(id).className = 'progress-step'; });
+  document.getElementById('step1').classList.add('active');
+  document.getElementById('resultsSection').classList.remove('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showToast(message, success) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = 'toast' + (success ? ' toast-success' : '');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+document.getElementById('confirmModal').addEventListener('click', function(e) {
+  if (e.target === this) closeConfirmModal();
+});
+</script>
+
+</body>
+</html>
+
